@@ -10,9 +10,21 @@ if (typeof web3 !== 'undefined') {
  //省略初始化过程
  var info = web3.eth.getBlock(3150);
  console.log(info);
-
- var blockNumber = 668;
- var indexOfTransaction = 0
  
- var transaction = web3.eth.getTransaction(blockNumber, indexOfTransaction);
- console.log(transaction);
+web3.eth.getBlock(3150,function(error,result){
+
+})
+
+//  var blockNumber = 668;
+//  var indexOfTransaction = 0
+ 
+//  var transaction = web3.eth.getTransaction(blockNumber, indexOfTransaction);
+//  console.log(transaction);
+
+ web3.eth.getBlock(48, function(error, result) {
+	if (!error)
+		console.log(JSON.stringify(result));
+	else
+		console.error(error);
+});
+

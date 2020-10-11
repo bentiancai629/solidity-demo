@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id='btn'>我是按钮</button>
+    <script>
+        // 传统写法
+       /*  function sum(x,y){
+            return x + y;
+        }
+
+        const sum2 = function(x,y){
+            return x + y;
+        }
+        const res = sum(2,3);
+        console.log(res);
+
+        const res2 = sum(3,3);
+        console.log(res2); */
+
+        // es6写法
+        const sum3 = (x,y) =>{
+            return x + y;
+        }
+
+        const res3 = sum3(4,5);
+        console.log(res3); 
+
+        const sum4 = (x,y) => x+y;
+        const res4 = sum3(5,5);
+        console.log(res4); 
+
+        const fn = () => {
+            // 业务代码
+        }
+
+        const oBtn = document.querySelector('#btn');
+        oBtn.addEventListener('click', ()=>{
+            console.log(this === window);
+            // this.style.backgroundColor = '#f00';
+        });
+
+        const obj = {
+            name1: 'nwf',
+            showName: ()=>{
+                console.log(this)
+                console.log('my name: ' + this.name1);
+            },
+            showName1(){ // es6对象方法的简写
+                console.log('my name: ' + this.name1);
+            },
+        }
+        obj.showName1();
+
+
+        //类
+        function Course(name,price){
+            this.name = name;
+            this.price = price;
+        }
+        Course.prototype.study = function(){
+            console.log(`我要学习${this.name},价格是:${this.price}`)
+        }
+
+        // const Course = (name,price) => {
+        //     this.name = name;
+        //     this.price = price;
+        // }
+
+        const c1 = new Course('es6',100);
+        console.log(c1) //  =>函数不能用构造函数
+        c1.study();
+    </script>
+</body>
+</html>

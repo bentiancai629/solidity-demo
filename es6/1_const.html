@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var es = 'es6';
+        // es = "es"
+        // es = 'es2015';
+        // console.log(es);
+
+        // const es = 'es6'
+        //  // es = 'es2015';
+        // console.log(es);
+
+        // var str = 'es6';
+        // var str = 'es7';
+        // console.log(str);
+
+        // const不属于顶层对象window
+        // const str = 'es6';
+        // console.log(window.str)
+
+        // 变量提升 const不存在变量提升
+        // console.log(str);
+        // var str = 'es6';
+
+        // 暂时性死区
+        // if(true){
+        //     var str = 'es6';
+        //     // const str = 'es6'; //块级作用域
+        // }
+        // console.log(str);
+
+        const esObj = {
+            name:'es6',
+            year: 2015,
+            extension:  ['es6','es7','es8'],
+        };
+        // Object.freeze(esObj)  // 冻结对象元素
+        myFreeeze(esObj)
+        esObj.name = '2011'
+        console.log(esObj)
+
+        const arr = ['es6','es7','es8'];
+        Object.freeze(arr)
+        arr[0] = 'es2015';
+        esObj.extension[0] = '2020'
+        console.log(arr);
+
+        function myFreeeze(obj) {
+            Object.freeze(obj);
+            Object.keys(obj).forEach(function(key){
+                if(typeof obj[key] === 'object'){
+                    myFreeeze(obj[key])
+                }
+            })
+        }
+
+        // let
+        
+    </script>
+    
+</body>
+</html>

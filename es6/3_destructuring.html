@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // 解构赋值
+        // const cource = {
+        //     name:'es6',
+        //     price: 500,
+        //     teacher:{
+        //         name:'nwf',
+        //         age:35
+        //     }
+        // };
+
+
+        // const name = cource.name;
+        // const price = cource.price;
+        // const {
+        //     name:courseName,
+        //     price,
+        //     teacher:{name,age}
+        // } = cource;
+        // console.log(courseName,price,name,age);
+
+        // const courseArr = ['es6','er7','es8'];
+        // const a = courseArr[0];
+        // const b = courseArr[1];
+        // const c = courseArr[2];
+        // const {a,b,c} = courseArr;
+        // console.log(a,b,c)
+
+
+        // const sum = arr =>{
+        //     let result = 0;
+        //     for(let i=0; i<arr.length; i++){
+        //         result += arr[i];
+        //     }
+        //     console.log(result);
+        // }
+        // sum([1,2,3])
+
+        // const foo = ({name,age,school='学校'})=>{
+        //     console.log(name,age,school)
+        // }
+
+        // foo({
+        //     name:'nwf',
+        //     age:20,
+        //     school:'imooc',
+        // })
+
+        // const foo = ()=>{
+        //     return {
+        //         name:'hh',
+        //         age:20
+        //     }
+        // }
+
+        // const {name,age} = foo();
+        // console.log(name,age);
+
+        // let a=1;
+        // let b=2;
+
+        // [b,a] = [a,b];
+        // console.log(a,b);
+
+        //json
+    //    const json =  '{"name":"yes","price":"500"}'
+    //    const obj = JSON.parse(json);
+
+    //    const {name,price} = JSON.parse(json);
+    //    console.log(obj)
+    //    const {name,price} = JSON.parse(json);
+    //    console.log(name,price)
+
+       axios.get('./data.json').then(function(res) {
+           console.log("res: " + JSON.stringify(res));
+       });
+
+       axios.get('./data.json').then( ({data}) => {
+           console.log("data: " + JSON.stringify(data));
+       });
+    </script>
+</body>
+</html>
