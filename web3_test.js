@@ -69,9 +69,6 @@ var hexStr = hexToBase64(hex)
 //  var res = parseInt(hexStr,10)
 //  console.log(res)
 
-
-
-
  /**
   * lEASTER hexStr => 10进制int
   * 
