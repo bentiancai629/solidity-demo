@@ -13,7 +13,6 @@ const {
 // Your Ethereum wallet private key
 const privateKey = 'b8c1b5c1d81f9475fdf2e334517d29f733bdfa40682207571b12fc1142cbf329';
 
-
 // Add your Ethereum wallet to the Web3 object
 web3.eth.accounts.wallet.add('0x' + privateKey);
 const myWalletAddress = web3.eth.accounts.wallet[0].address;
