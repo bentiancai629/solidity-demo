@@ -271,7 +271,7 @@ const main = async () => {
     // const contractResult = await withdraw();
 
     // const contractResult = await getReserveData();
-    // const contractResult = await getUserAccountData();
+    const contractResult = await getUserAccountData();
 
     console.log(`contractResult: ${JSON.stringify(contractResult)}`);
 
